@@ -31,7 +31,7 @@
 
 1. Клонировать репозиторий:
 
-git clone https://github.com/pruffit/TaskList.git
+git clone https://github.com/pruffit/todo-app.git
 Установить зависимости:
 
 bash
