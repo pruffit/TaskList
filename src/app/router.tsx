@@ -1,7 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './app';
-import TodoListPage from '@/features/todo/pages/TodoListPage';
-import TodoItemPage from '@/features/todo/pages/TodoItemPage';
+import { TodoListPage, TodoItemPage } from '@/features/todo';
 
 export const router = createBrowserRouter([
   {
