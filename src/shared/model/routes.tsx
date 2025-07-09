@@ -1,7 +1,7 @@
 export const ROUTES = {
-  HOME: "/",
-  TASKS: "/tasks",
-  TASK: "/tasks/:taskId",
+  HOME: '/',
+  TASKS: '/tasks',
+  TASK: '/tasks/:taskId',
 } as const;
 
 export type PathParams = {
