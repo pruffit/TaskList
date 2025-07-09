@@ -11,7 +11,7 @@
       "@/*": ["./*"]
     },
 
-    "types": ["vite/client"],
+    "types": ["vite/client", "vitest/globals"],
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,

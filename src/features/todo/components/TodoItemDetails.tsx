@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/shared/components/ui
 import useTodoStore from '../hooks/useTodoStore';
 import { Todo } from '@/features/todo/types/todo';
 
-const TodoItemPage = () => {
+const TodoItemDetails = () => {
   const { id } = useParams<{ id: string }>();
   const { todos, toggleTodo } = useTodoStore();
 
@@ -14,10 +14,7 @@ const TodoItemPage = () => {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Task Details</CardTitle>
-          <div className="mt-2">
-            <span className={'text-gray-500 line-through'}>Task Not Found</span>
-          </div>
+          <CardTitle>Task Not Found</CardTitle>
         </CardHeader>
         <CardContent className="text-center">
           <p className="mb-4">The requested task does not exist</p>
@@ -32,10 +29,9 @@ const TodoItemPage = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Task Details</CardTitle>
-        <div className="mt-2">
+        <CardTitle>
           <span className={todo.completed ? 'text-gray-500 line-through' : ''}>{todo.text}</span>
-        </div>
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-center space-x-2">
@@ -62,4 +58,4 @@ const TodoItemPage = () => {
   );
 };
 
-export default TodoItemPage;
+export default TodoItemDetails;
