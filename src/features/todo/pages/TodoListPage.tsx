@@ -9,9 +9,9 @@ const TodoListPage = () => {
     useTodoStore();
 
   return (
-    <Card>
+    <Card className="w-full max-w-md dark:border-gray-700 dark:bg-gray-800">
       <CardHeader>
-        <CardTitle>Tasks List</CardTitle>
+        <CardTitle className="dark:text-white">Tasks List</CardTitle>
       </CardHeader>
       <CardContent>
         <TodoForm onSubmit={addTodo} />

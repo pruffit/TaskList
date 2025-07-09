@@ -18,8 +18,8 @@ const TodoList = ({ todos, onToggle }: { todos: Todo[]; onToggle: (id: string) =
           />
           <Link
             to={`/todo-item/${todo.id}`}
-            className={`flex-1 rounded p-2 text-sm transition-colors hover:bg-gray-100 ${
-              todo.completed ? 'text-gray-500 line-through' : ''
+            className={`flex-1 cursor-pointer rounded p-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 ${
+              todo.completed ? 'text-gray-500 line-through' : 'dark:text-gray-200'
             }`}
           >
             {todo.text}

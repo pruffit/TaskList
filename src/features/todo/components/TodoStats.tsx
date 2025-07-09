@@ -22,10 +22,16 @@ const TodoStats = ({
   return (
     <div className="mt-4">
       <Tabs value={filter} onValueChange={handleValueChange} className="mb-4">
-        <TabsList className="grid grid-cols-3">
-          <TabsTrigger value="all">All</TabsTrigger>
-          <TabsTrigger value="active">Active</TabsTrigger>
-          <TabsTrigger value="completed">Completed</TabsTrigger>
+        <TabsList className="grid grid-cols-3 dark:bg-gray-700">
+          <TabsTrigger value="all" className="dark:data-[state=active]:bg-gray-600">
+            All
+          </TabsTrigger>
+          <TabsTrigger value="active" className="dark:data-[state=active]:bg-gray-600">
+            Active
+          </TabsTrigger>
+          <TabsTrigger value="completed" className="dark:data-[state=active]:bg-gray-600">
+            Completed
+          </TabsTrigger>
         </TabsList>
       </Tabs>
 

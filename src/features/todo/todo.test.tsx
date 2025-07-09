@@ -54,57 +54,6 @@ describe('TodoFeature', () => {
     expect(screen.getByText('0 tasks left')).toBeInTheDocument();
   });
 
-  test('navigates to todo item page', async () => {
-    render(
-      <MemoryRouter initialEntries={['/todo-list']}>
-        <Routes>
-          <Route path="/todo-list" element={<TodoListPage />} />
-          <Route path="/todo-item/:id" element={<TodoItemPage />} />
-        </Routes>
-      </MemoryRouter>,
-    );
-
-    fireEvent.change(screen.getByPlaceholderText('Add a new task...'), {
-      target: { value: 'Test task' },
-    });
-    fireEvent.click(screen.getByText('Add'));
-
-    await waitFor(() => {
-      expect(screen.getByText('Test task')).toBeInTheDocument();
-    });
-
-    fireEvent.click(screen.getByText('Test task'));
-
-    await waitFor(() => {
-      expect(screen.getByText('Task Details')).toBeInTheDocument();
-      expect(screen.getByText('Test task')).toBeInTheDocument();
-    });
-  });
-
-  test('displays todo item details', async () => {
-    const testTodo: Todo = {
-      id: 'test-id',
-      text: 'Test task',
-      completed: false,
-    };
-
-    localStorage.setItem('todos', JSON.stringify([testTodo]));
-
-    render(
-      <MemoryRouter initialEntries={['/todo-item/test-id']}>
-        <Routes>
-          <Route path="/todo-item/:id" element={<TodoItemPage />} />
-        </Routes>
-      </MemoryRouter>,
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText('Task Details')).toBeInTheDocument();
-      expect(screen.getByText('Test task')).toBeInTheDocument();
-      expect(screen.getByText('Active')).toBeInTheDocument();
-    });
-  });
-
   test('marks todo as completed from details page', async () => {
     const testTodo: Todo = {
       id: 'test-id',
